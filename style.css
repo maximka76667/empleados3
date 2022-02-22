@@ -1,0 +1,83 @@
+body {
+  font: 1em "Verdana";
+}
+
+img {
+  padding: 0.25em; 
+  width: 1.2em;
+  transition: all 0.2s;
+}
+
+.table__delete-button:hover {
+  transform: rotate(45deg);
+}
+
+form {
+  width: 450px;
+  margin: 300px auto 0;
+}
+
+input {
+  width: 100px;
+  height: 25px;
+  margin: 0 10px 0 0;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #000;
+  outline: 0;
+  font: 0.8em "Verdana";
+  text-align: center;
+}
+
+select {
+  width: 120px;
+  height: 25px;
+  margin: 0 20px 0 0;
+  font: 0.8em "Verdana";
+}
+
+option {
+  font: 1em "Verdana";
+}
+
+button {
+  width: 80px;
+  height: 30px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  transition: all 0.3s;
+  font: 0.8em "Verdana";
+  background-color: #000;
+  color: #fff;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+table {
+  width: 70%;
+  margin: 30px auto 20px;
+  border-collapse: collapse;
+}
+
+tr td {
+  padding: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
+tr:nth-child(1) td {
+  background-color: orange;
+}
+
+tr:nth-child(2n) td {
+  background-color: lightgrey;
+}
+
+p {
+  margin: 0;
+  text-align: center;
+}
