@@ -2,16 +2,6 @@ body {
   font: 1em "Verdana";
 }
 
-img {
-  padding: 0.25em; 
-  width: 1.2em;
-  transition: all 0.2s;
-}
-
-.table__delete-button:hover {
-  transform: rotate(45deg);
-}
-
 form {
   width: 450px;
   margin: 300px auto 0;
@@ -80,4 +70,18 @@ tr:nth-child(2n) td {
 p {
   margin: 0;
   text-align: center;
+}
+
+img {
+  padding: 0.25em; 
+  width: 1.2em;
+  transition: all 0.2s;
+}
+
+.table__delete-button:hover {
+  transform: rotate(45deg);
+}
+
+.table__edit-button:hover {
+  transform: scale(1.1);
 }
