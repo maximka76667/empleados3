@@ -50,10 +50,10 @@
         <h1>Actualizar Empleado</h1>
 
         <form method="POST" action="">
-            <div class="col_izq">Número:</div>  <div class="col_der"><input type="text" value="3344" name="numero_frm" readonly> </div>
-            <div class="col_izq">Nombre:</div>  <div class="col_der"><input type="text" name="nombre_frm" > </div>
-            <div class="col_izq">Puesto:</div>  <div class="col_der"><input type="text" name="puesto_frm" > </div>
-            <div class="col_izq">Salario:</div> <div class="col_der"><input type="number" name="salario_frm" > </div>
+            <div class="col_izq">Número:</div>  <div class="col_der"><input type="text" value="<?=$_GET['numero_frm'];?>" name="numero_frm"> </div>
+            <div class="col_izq">Nombre:</div>  <div class="col_der"><input type="text" value="<?=$_GET['nombre_frm'];?>" name="nombre_frm" > </div>
+            <div class="col_izq">Puesto:</div>  <div class="col_der"><input type="text" value="<?=$_GET['puesto_frm'];?>" name="puesto_frm" > </div>
+            <div class="col_izq">Salario:</div> <div class="col_der"><input type="number" value="<?=$_GET['salario_frm'];?>" name="salario_frm" > </div>
             <div id="botones">
             <input type="submit" value="Actualizar" name="actualizar">
             <input type="submit" value="Cancelar" name="cancelar">
@@ -65,7 +65,9 @@
 
             if (isset($actualizar) && $actualizar!=null) {
                 $connection = mysqli_connect('localhost', 'root', 'root', 'empresa') or die("Error: " . mysqli_connect_error());
-                $query = "UPDATE FROM `empleados` WHERE `num_empleado` = $num";
+                $query = "UPDATE `empleados` 
+                SET `nombre_empleado`='$nombre_frm', `puesto`='$puesto_frm', `salario`=$salario_frm
+                WHERE `num_empleado`=$numero_frm";
                 $result = mysqli_query($connection, $query) or die ("La inserción ha fallado, causa: " . mysqli_error($connection));
                 header("location:index.php");
             } elseif (isset($cancelar) && $cancelar!=null) {

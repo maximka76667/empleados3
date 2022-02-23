@@ -12,6 +12,10 @@
                 window.location = `borrar_empleado.php?num=${num_empleado}`;
             }
         }
+
+        function edit(num, nombre, puesto, salario) {
+            window.location = `ver_empleado.php?numero_frm=${num}&nombre_frm=${nombre}&puesto_frm=${puesto}&salario_frm=${salario}`;
+        }
     </script>
 </head>
 <body>
@@ -30,6 +34,7 @@
 
     <table>
          <tr>
+            <td></td>
             <td></td>
             <td>Número empleado</td>
             <td>Nombre empleado</td>
@@ -84,9 +89,18 @@
             while($row = mysqli_fetch_array($result)) {
                 echo "<tr>
                 <td>" . "<a href='#' title='Borrar Empleado'
-                onclick='confirmar_borrado(" . $row['num_empleado'] . ");return false;'>
-                <img class='table__delete-button' src='delete.png' alt='Borrar' >
-               </a>" . "</td>
+                    onclick='confirmar_borrado(" . $row['num_empleado'] . ");return false;'>
+                    <img class='table__delete-button' src='delete.png' alt='Borrar' >
+                </a>" . "</td>
+                <td>" . "<a href='#' title='Edit Empleado'
+                    onclick='edit(" . 
+                        $row['num_empleado'] . "," . '"' .
+                        $row['nombre_empleado'] . '",' . '"' .
+                        $row['puesto'] . '",' .
+                        $row['salario']
+                     . ");return false;'>
+                    <img class='table__edit-button' src='edit.png' alt='Borrar' >
+                </a>" . "</td>
                 <td>" . $row['num_empleado'] . "</td>
                 <td>" . $row['nombre_empleado'] . "</td>
                 <td>" . $row['puesto'] . "</td>
